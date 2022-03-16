@@ -42,7 +42,6 @@ print('Total revenue: ' + '$' + str(total_revenue) )
 print('')
 average_daily_revenue = int(total_revenue) / 7 
 print('Average daily revenue: '  + '$' + str(average_daily_revenue))
-
 print ('')
 cuts_under_30 = [new_prices[i] for i in range(len(new_prices)-1) if new_prices[i] < 30]
 print('These are the haircuts under $30: ' + str(cuts_under_30))
