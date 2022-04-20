@@ -50,25 +50,23 @@ class Franchise:
         available_menu.append(menu)
     return(available_menu)
   
-  def menu(self):
-    pass
-
-  def time(self):
-    pass
-    
-arepas_menu = {
-  'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50
-}
-
 class Business:
   def __init__(self, name, franchises):
     self.name = name
     self.franchises = franchises
-
-franchises= ("flagship_store, new_installment")
-
+    
+brunch = Menu("brunch", brunch_items, 1100, 1600)
+early_bird = Menu("early_bird", early_bird_items, 1500, 1800)
+dinner = Menu("dinner", dinner_items, 1700, 2300)
+kids = Menu("kids", kids_items, 1100, 2100)
+arepas_menu = Menu("franchise", franchise_items, 1000, 2000)
+#print(brunch.calculate_bill(['pancakes', 'home fries', 'coffee']))
+#print(early_bird.calculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
+flagship_store = Franchise("1232 West End Road",[brunch, early_bird, dinner, kids])
+new_installment = Franchise("12 East Muberry Street", [brunch, early_bird, dinner, kids])
 arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
-
-basta = Business("Basta Fazoolin' with my Heart", [franchises])
+#print(flagship_store.available_menus(1200))
+#print(flagship_store.available_menus(1700))
+basta = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
 arepa = Business("Take a' Arepa", [arepas_place])
 print(arepa)
